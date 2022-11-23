@@ -2,14 +2,14 @@ import { IUser } from '../interface/interfaces';
 import UserModel from '../database/models/UserModel';
 
 class LoginModel {
-  static async getUserByEmail(email: string): Promise<string | undefined> {
+  static async getUserByEmail(email: string): Promise<IUser | undefined> {
     const [result] = await UserModel.findAll({
       where: {
         email,
       },
     }) as IUser[];
 
-    return result ? result.password : undefined;
+    return result;
   }
 }
 

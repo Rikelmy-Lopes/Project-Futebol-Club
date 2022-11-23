@@ -10,3 +10,8 @@ export interface IServiceResponse {
   error: null | string;
   result: null | string;
 }
+
+export interface IPayloadJWT {
+  email: string;
+  iat: number;
+}

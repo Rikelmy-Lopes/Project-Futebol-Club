@@ -5,11 +5,11 @@ import LoginModel from '../model/LoginModel';
 
 class LoginService {
   static async checkPasswordAndEmail(email: string, password: string): Promise<IServiceResponse> {
-    const encryptedPassword = await LoginModel.getUserByEmail(email);
+    const result = await LoginModel.getUserByEmail(email);
 
-    if (encryptedPassword === undefined) return { error: 'Invalid Email', result: null };
+    if (result === undefined) return { error: 'Invalid Email', result: null };
 
-    const isPasswordValid = await Bcrypt.checkPassword(password, encryptedPassword);
+    const isPasswordValid = await Bcrypt.checkPassword(password, result.password);
 
     if (isPasswordValid) {
       const token = createToken(email);
@@ -17,6 +17,16 @@ class LoginService {
     }
 
     return { error: 'Invalid Password', result: null };
+  }
+
+  static async validateToken(userEmail: string): Promise<IServiceResponse> {
+    const result = await LoginModel.getUserByEmail(userEmail);
+
+    if (result === undefined) {
+      return { error: 'User not found', result: null };
+    }
+
+    return { error: null, result: result.role };
   }
 }
 

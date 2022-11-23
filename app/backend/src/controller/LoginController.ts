@@ -10,6 +10,15 @@ class LoginController {
 
     response.status(200).json({ token: result });
   }
+
+  static async validateToken(request: Request, response: Response) {
+    const { userEmail } = request.body;
+    const { error, result } = await LoginServicer.validateToken(userEmail);
+
+    if (!error) {
+      response.status(200).json({ role: result });
+    }
+  }
 }
 
 export default LoginController;
