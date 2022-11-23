@@ -6,7 +6,7 @@ class LoginController {
     const { email, password } = request.body;
     const { error, result } = await LoginServicer.checkPassword(email, password);
 
-    if (error) return response.status(404).json({ message: 'Invalid Password' });
+    if (error) return response.status(401).json({ message: 'Incorrect email or password' });
 
     response.status(200).json({ token: result });
   }

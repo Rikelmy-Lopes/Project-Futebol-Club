@@ -11,6 +11,8 @@ class LoginService {
       },
     }) as IUser[];
 
+    if (result === undefined) return { error: 'Invalid Password', result: null };
+
     const isPasswordValid = await Bcrypt.checkPassword(password, result.password);
 
     if (isPasswordValid) {
