@@ -7,6 +7,12 @@ class TeamsModel {
 
     return result;
   }
+
+  static async getTeamById(id: number | string) {
+    const result = await TeamModel.findByPk(id);
+
+    return result;
+  }
 }
 
 export default TeamsModel;

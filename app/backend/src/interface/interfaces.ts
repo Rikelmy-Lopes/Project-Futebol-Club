@@ -1,3 +1,5 @@
+import { ITeam } from './interfaceTeam';
+
 export interface IUser {
   id: number;
   username: string;
@@ -8,7 +10,7 @@ export interface IUser {
 
 export interface IServiceResponse {
   error: null | string;
-  result: null | string;
+  result: null | string | ITeam[];
 }
 
 export interface IPayloadJWT {
