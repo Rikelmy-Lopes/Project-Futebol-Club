@@ -7,7 +7,7 @@ class LoginService {
   static async checkPasswordAndEmail(email: string, password: string): Promise<IServiceResponse> {
     const result = await LoginModel.getUserByEmail(email);
 
-    if (result === undefined) return { error: 'Invalid Email', result: null };
+    if (!result) return { error: 'Invalid Email', result: null };
 
     const isPasswordValid = await Bcrypt.checkPassword(password, result.password);
 
