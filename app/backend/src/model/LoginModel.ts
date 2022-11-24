@@ -3,11 +3,11 @@ import UserModel from '../database/models/UserModel';
 
 class LoginModel {
   static async getUserByEmail(email: string): Promise<IUser | undefined> {
-    const [result] = await UserModel.findAll({
+    const result = await UserModel.findOne({
       where: {
         email,
       },
-    }) as IUser[];
+    }) as IUser;
 
     return result;
   }
