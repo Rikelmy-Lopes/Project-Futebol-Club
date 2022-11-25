@@ -14,28 +14,24 @@ chai.use(chaiHttp)
 
 const { expect } = chai;
 
-describe('Testa a rota /Login', () => {
+describe('Testa a rota /login', () => {
 
-    beforeEach(async () => {
-        sinon
-          .stub(UserModel, "findOne")
-          .resolves(modelResponse as any);
+    beforeEach(() => {
+        sinon.stub(UserModel, 'findOne').resolves(modelResponse as any);
       });
-      
-      afterEach(()=>{
-        (UserModel.findOne as sinon.SinonStub).restore();
-      })
+    
+      afterEach(() => { (UserModel.findOne as sinon.SinonStub).restore() });
 
         let chaiHttpResponse: Response;
 
     it('Testa se faz login com sucesso e retornar um token', async () => {
         chaiHttpResponse = await chai.request(app).post('/login').send(
             {
-                email: 'user@user.com',
-                password: 'secret_user'
+                email: "user@user.com",
+                password: "secret_user"
             }
         )
 
-        expect(chaiHttpResponse.status).to.be.equal(200);
+        expect(chaiHttpResponse.status).to.be.equal(200)
     })
 })
