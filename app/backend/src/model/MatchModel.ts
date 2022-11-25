@@ -3,7 +3,7 @@ import MatchesModel from '../database/models/MatchesModel';
 import TeamModel from '../database/models/TeamModel';
 
 class MatchModel {
-  static async getAllMatches(inProgress: any) {
+  static async getAllMatches(inProgress: string | undefined) {
     if (inProgress === undefined) {
       const result = await MatchesModel.findAll({
         include: [{ model: TeamModel, as: 'teamHome', attributes: { exclude: ['id', 'matches'] } },
