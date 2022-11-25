@@ -4,3 +4,8 @@ export interface IMatchBody {
   homeTeamGoals: number;
   awayTeamGoals: number;
 }
+
+export interface ITeamGoals {
+  homeTeamGoals: number;
+  awayTeamGoals: number;
+}

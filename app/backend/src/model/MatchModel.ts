@@ -1,4 +1,4 @@
-import { IMatchBody } from '../interface/interfaceMatch';
+import { IMatchBody, ITeamGoals } from '../interface/interfaceMatch';
 import MatchesModel from '../database/models/MatchesModel';
 import TeamModel from '../database/models/TeamModel';
 
@@ -46,6 +46,20 @@ class MatchModel {
         id,
       },
     });
+  }
+
+  static async updateMatch(id: string | number, teamGoals: ITeamGoals) {
+    await MatchesModel.update(
+      {
+        homeTeamGoals: teamGoals.homeTeamGoals,
+        awayTeamGoals: teamGoals.awayTeamGoals,
+      },
+      {
+        where: {
+          id,
+        },
+      },
+    );
   }
 }
 

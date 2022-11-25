@@ -1,5 +1,5 @@
 import { verifyTeams } from '../utils/verifyTeams';
-import { IMatchBody } from '../interface/interfaceMatch';
+import { IMatchBody, ITeamGoals } from '../interface/interfaceMatch';
 import MatchModel from '../model/MatchModel';
 
 class MatchService {
@@ -25,6 +25,10 @@ class MatchService {
 
   static async finishMatch(id: number | string): Promise<void> {
     await MatchModel.finishMatch(id);
+  }
+
+  static async updateMatch(id: number | string, teamGoals: ITeamGoals): Promise<void> {
+    await MatchModel.updateMatch(id, teamGoals);
   }
 }
 

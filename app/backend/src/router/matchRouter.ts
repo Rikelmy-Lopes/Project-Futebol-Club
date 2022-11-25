@@ -10,4 +10,6 @@ router.post('/matches', LoginMiddleware.validateToken, MatchController.addMatch)
 
 router.patch('/matches/:id/finish', MatchController.finishMatch);
 
+router.patch('/matches/:id', MatchController.updateMatch);
+
 export default router;
