@@ -22,7 +22,7 @@ class LoginMiddleware {
     const { decoded } = jwt.validateToken(authorization);
 
     if (decoded === null) {
-      response.status(401).json({ message: 'Expired or invalid token' });
+      response.status(401).json({ message: 'Token must be a valid token' });
       return;
     }
 

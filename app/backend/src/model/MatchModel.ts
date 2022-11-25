@@ -1,3 +1,4 @@
+import { IMatchBody } from '../interface/interfaceMatch';
 import MatchesModel from '../database/models/MatchesModel';
 import TeamModel from '../database/models/TeamModel';
 
@@ -22,6 +23,18 @@ class MatchModel {
       include: [{ model: TeamModel, as: 'teamHome', attributes: { exclude: ['id', 'matches'] } },
         { model: TeamModel, as: 'teamAway', attributes: { exclude: ['id', 'matches'] } },
       ],
+    });
+
+    return result;
+  }
+
+  static async addMatch(match: IMatchBody) {
+    const result = await MatchesModel.create({
+      homeTeam: match.homeTeam,
+      homeTeamGoals: match.homeTeamGoals,
+      awayTeam: match.awayTeam,
+      awayTeamGoals: match.awayTeamGoals,
+      inProgress: true,
     });
 
     return result;
