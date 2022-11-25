@@ -22,6 +22,10 @@ class MatchService {
 
     return { error: 'There is no team with such id!', result: null };
   }
+
+  static async finishMatch(id: number | string): Promise<void> {
+    await MatchModel.finishMatch(id);
+  }
 }
 
 export default MatchService;

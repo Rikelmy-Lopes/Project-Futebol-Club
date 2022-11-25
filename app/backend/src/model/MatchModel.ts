@@ -39,6 +39,14 @@ class MatchModel {
 
     return result;
   }
+
+  static async finishMatch(id: number | string): Promise<void> {
+    await MatchesModel.update({ inProgress: false }, {
+      where: {
+        id,
+      },
+    });
+  }
 }
 
 export default MatchModel;

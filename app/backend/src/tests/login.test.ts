@@ -17,7 +17,7 @@ const { expect } = chai;
 describe('Testa a rota /login', () => {
 
     beforeEach(() => {
-        sinon.stub(UserModel, 'findOne').resolves(modelResponse as any);
+        sinon.stub(UserModel, 'findOne').resolves(modelResponse as UserModel);
       });
     
       afterEach(() => { (UserModel.findOne as sinon.SinonStub).restore() });
