@@ -32,3 +32,5 @@ export interface ILeaderboard {
   goalsBalance: number
   efficiency: string
 }
+
+export type IFilterBy = 'home' | 'away';
