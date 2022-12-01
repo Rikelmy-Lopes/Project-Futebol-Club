@@ -3,7 +3,13 @@ import LeaderboardServicer from '../service/LeaderboardServicer';
 
 class LeaderboardController {
   static async getLeaderBoardHome(_request: Request, response: Response) {
-    const result = await LeaderboardServicer.getLeaderBoardHome();
+    const result = await LeaderboardServicer.getLeaderboardHome();
+
+    response.status(200).json(result);
+  }
+
+  static async getLeaderBoarAway(_request: Request, response: Response) {
+    const result = await LeaderboardServicer.getLeaderboardAway();
 
     response.status(200).json(result);
   }

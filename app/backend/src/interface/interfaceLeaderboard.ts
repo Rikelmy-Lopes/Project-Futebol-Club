@@ -1,3 +1,5 @@
+import { IMatch } from './interfaceMatch';
+
 export interface IPoints {
   name: string;
   totalPoints: number
@@ -32,5 +34,10 @@ export interface ILeaderboard {
   goalsBalance: number
   efficiency: string
 }
-
 export type IFilterBy = 'home' | 'away';
+
+export type IFilter = {
+  primaryTeamId: keyof IMatch
+  primaryTeamGoals: keyof IMatch
+  secondaryTeamGoals: keyof IMatch
+};

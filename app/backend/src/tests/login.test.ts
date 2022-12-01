@@ -62,6 +62,15 @@ describe('Testa a rota POST /login', () => {
             expect(chaiHttpResponse.body.role).to.be.equal('user')
         })
 
+        it('Testa se valida com token Valido, mas Email inexistente', async () => {
+            sinon.stub(UserModel, 'findOne').resolves(undefined)
+            chaiHttpResponse = await chai.request(app).get('/login/validate').set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlci5jb20iLCJpYXQiOjE2Njk4MzU2MDF9.tl4NTMIu9hHEam4vOfcJeb_1yeQssmuthpANirf3qt0')
+            .send({role: 'user'})
+            
+            expect(chaiHttpResponse.status).to.be.equal(404)
+            expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'User not found' })
+        })
+
         it('Testa se valida retorna 401 sem passar o token', async () => {
             chaiHttpResponse = await chai.request(app).get('/login/validate').set('Authorization', '')
             .send({role: 'user'})

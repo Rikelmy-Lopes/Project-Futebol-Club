@@ -17,7 +17,10 @@ class LoginController {
 
     if (!error) {
       response.status(200).json({ role: result });
+      return;
     }
+
+    response.status(404).json({ message: 'User not found' });
   }
 }
 
