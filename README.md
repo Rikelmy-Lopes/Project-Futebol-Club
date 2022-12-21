@@ -1,6 +1,7 @@
 # Project Futebol Club
 
-Projeto desenvolvido durante o curso da Trybe
+Projeto desenvolvido durante o curso da Trybe!
+Nesse projeto foi desenvolvido uma API que se conecta com o Front-end onde é possível fazer login, adicionar times/Partidas e fazer um filtro por Partidas!
 
 ## Rode Localmente
 
