@@ -155,5 +155,23 @@ Suba os containers
 | :----------- | :--------- | :--------------- |
 | `homeTeamGoals` | `number` | **Obrigatório**. Quantidade de Goals |
 | `awayTeamGoals` | `number` | **Obrigatório**. Quantidade de Goals |
+  
+#### Retorna o placar de todos os Times
+
+```http
+  GET /leaderboard
+```
+  
+  #### Retorna o placar dos Times Mandantes
+
+```http
+  GET /leaderboard/home
+```
+  
+#### Retorna o placar dos Times Visitantes
+
+```http
+  GET /leaderboard/away
+```
 
 </details>
