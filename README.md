@@ -113,5 +113,47 @@ Suba os containers
 | Header       | Type       | Description      |
 | :----------- | :--------- | :--------------- |
 | `inProgress` | `booleano` | **Obrigatório**. |
+  
+#### Adiciona um novo Jogo
+
+```http
+  POST /matches
+```
+
+| Body       | Type       | Description      |
+| :----------- | :--------- | :--------------- |
+| `homeTeam` | `number` | **Obrigatório**. Id do Time da Casa |
+| `awayTeam` | `number` | **Obrigatório**. Id do TIme de Fora |
+| `homeTeamGoals` | `number` | **Obrigatório**. Quantidade de Goals |
+| `awayTeamGoals` | `number` | **Obrigatório**. Quantidade de Goals|
+  
+| Header       | Type       | Description      |
+| :----------- | :--------- | :--------------- |
+| `authorization` | `string` | **Obrigatório**. Token |
+  
+  #### Atualiza uma Jogo para Finalizado
+
+```http
+  PATCH /matches/:id/finish
+```
+
+| Parameter       | Type       | Description      |
+| :----------- | :--------- | :--------------- |
+| `id` | `number` | **Obrigatório**. Id do Jogo|
+  
+#### Atualiza um Jogo
+
+```http
+  PATCH /matches/:id/
+```
+
+| Parameter       | Type       | Description      |
+| :----------- | :--------- | :--------------- |
+| `id` | `number` | **Obrigatório**. Id do Time|
+  
+| Body       | Type       | Description      |
+| :----------- | :--------- | :--------------- |
+| `homeTeamGoals` | `number` | **Obrigatório**. Quantidade de Goals |
+| `awayTeamGoals` | `number` | **Obrigatório**. Quantidade de Goals |
 
 </details>
