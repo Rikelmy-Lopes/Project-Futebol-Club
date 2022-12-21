@@ -175,3 +175,13 @@ Suba os containers
 ```
 
 </details>
+
+## Tecnologias
+-   **[Typescript](https://www.typescriptlang.org/)**
+-   **[NodeJs](https://nodejs.org/en/)**
+-   **[ExpressJs](https://expressjs.com/)**
+-   **[MySql](https://www.mysql.com/)**
+-   **[Sequelize](https://sequelize.org/)**
+-   **[Joi](https://github.com/hapijs/joi)**
+-   **[Docker](https://www.docker.com/)**
+-   **[JWT](https://jwt.io/)**
