@@ -1,13 +1,123 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+# Project Futebol Club
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Projeto desenvolvido durante o curso da Trybe
+## Rode Localmente
+
+### Variaveis de Ambiente
+
+Para rodar esse Projeto, você vai precisar adicionar as seguintes variaveis de ambiente no seu arquivo .env:
+
+`JWT_SECRET`
+
+`APP_PORT`
+
+`DB_USER`
+
+`DB_PASS`
+
+`DB_HOST`
+
+`DB_PORT`
+
+Clone o Projeto
+
+```bash
+  git clone git@github.com:Rikelmy-Lopes/Project-Futebol-Club.git
+```
+
+Vá para o diretorio do Projeto
+
+```bash
+  cd Project-Futebol-Club
+```
+
+Instale as Dependencias
+
+```bash
+  npm install
+```
+
+Suba os containers
+
+```bash
+  npm run compose:up
+```
+
+
+## Documentação
+
+
+
+
+
+<details>
+  <summary><strong> API Reference </strong></summary>
+
+## API Reference
+
+#### Valida o Usuario
+
+```http
+  POST /login
+```
+
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `email` | `string` | **Obrigatório**. Seu Email |
+| `password` | `string` | **Obrigatório**. Sua Senha |
+
+#### Valida o Token
+
+```http
+  GET /login/validate
+```
+
+| Header | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `authorization`      | `string` | **Obrigatório**. Token |
+
+#### Retorna todos os times
+
+```http
+  GET /teams
+```
+
+#### Retorna o time por Id
+
+```http
+  GET /teams/:id
+```
+
+| Header | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Obrigatório**. Id do Time |
+
+#### Retorna todos os Jogos
+
+```http
+  GET /matches
+```
+
+#### Retorna todos os Jogos em Progresso
+
+```http
+  GET /matches/inProgress=true
+```
+
+| Header | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `inProgress`      | `booleano` | **Obrigatório**. |
+
+#### Retorna todos os Jogos já terminados
+
+```http
+  GET /matches/inProgress=false
+```
+
+| Header | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `inProgress`      | `booleano` | **Obrigatório**. |
+
+
+</details>
