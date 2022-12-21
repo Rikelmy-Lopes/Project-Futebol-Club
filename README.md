@@ -1,7 +1,7 @@
-
 # Project Futebol Club
 
 Projeto desenvolvido durante o curso da Trybe
+
 ## Rode Localmente
 
 ### Variaveis de Ambiente
@@ -44,12 +44,7 @@ Suba os containers
   npm run compose:up
 ```
 
-
 ## Documentação
-
-
-
-
 
 <details>
   <summary><strong> API Reference </strong></summary>
@@ -62,9 +57,9 @@ Suba os containers
   POST /login
 ```
 
-| Body | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `email` | `string` | **Obrigatório**. Seu Email |
+| Body       | Type     | Description                |
+| :--------- | :------- | :------------------------- |
+| `email`    | `string` | **Obrigatório**. Seu Email |
 | `password` | `string` | **Obrigatório**. Sua Senha |
 
 #### Valida o Token
@@ -73,9 +68,9 @@ Suba os containers
   GET /login/validate
 ```
 
-| Header | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `authorization`      | `string` | **Obrigatório**. Token |
+| Header          | Type     | Description            |
+| :-------------- | :------- | :--------------------- |
+| `authorization` | `string` | **Obrigatório**. Token |
 
 #### Retorna todos os times
 
@@ -89,9 +84,9 @@ Suba os containers
   GET /teams/:id
 ```
 
-| Header | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Obrigatório**. Id do Time |
+| Header | Type     | Description                 |
+| :----- | :------- | :-------------------------- |
+| `id`   | `string` | **Obrigatório**. Id do Time |
 
 #### Retorna todos os Jogos
 
@@ -105,9 +100,9 @@ Suba os containers
   GET /matches/inProgress=true
 ```
 
-| Header | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `inProgress`      | `booleano` | **Obrigatório**. |
+| Header       | Type       | Description      |
+| :----------- | :--------- | :--------------- |
+| `inProgress` | `booleano` | **Obrigatório**. |
 
 #### Retorna todos os Jogos já terminados
 
@@ -115,9 +110,8 @@ Suba os containers
   GET /matches/inProgress=false
 ```
 
-| Header | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `inProgress`      | `booleano` | **Obrigatório**. |
-
+| Header       | Type       | Description      |
+| :----------- | :--------- | :--------------- |
+| `inProgress` | `booleano` | **Obrigatório**. |
 
 </details>
