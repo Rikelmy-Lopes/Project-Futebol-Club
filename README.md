@@ -75,13 +75,13 @@ Suba os containers
 
 ## API Reference
 
-#### Valida o Usuario
+#### Valida o Usuário
 
 ```http
   POST /login
 ```
 
-| Body       | Type     | Description                |
+| Body       | Tipo     | Descrição                |
 | :--------- | :------- | :------------------------- |
 | `email`    | `string` | **Obrigatório**. Seu Email |
 | `password` | `string` | **Obrigatório**. Sua Senha |
@@ -92,7 +92,7 @@ Suba os containers
   GET /login/validate
 ```
 
-| Header          | Type     | Description            |
+| Header          | Tipo| Descrição|
 | :-------------- | :------- | :--------------------- |
 | `authorization` | `string` | **Obrigatório**. Token |
 
@@ -108,7 +108,7 @@ Suba os containers
   GET /teams/:id
 ```
 
-| Header | Type     | Description                 |
+| Header | Tipo| Descrição|
 | :----- | :------- | :-------------------------- |
 | `id`   | `string` | **Obrigatório**. Id do Time |
 
@@ -124,7 +124,7 @@ Suba os containers
   GET /matches/inProgress=true
 ```
 
-| Header       | Type       | Description      |
+| Header       | Tipo| Descrição|
 | :----------- | :--------- | :--------------- |
 | `inProgress` | `booleano` | **Obrigatório**. |
 
@@ -134,7 +134,7 @@ Suba os containers
   GET /matches/inProgress=false
 ```
 
-| Header       | Type       | Description      |
+| Header       | Tipo| Descrição|
 | :----------- | :--------- | :--------------- |
 | `inProgress` | `booleano` | **Obrigatório**. |
   
@@ -144,14 +144,14 @@ Suba os containers
   POST /matches
 ```
 
-| Body       | Type       | Description      |
+| Body       | Tipo| Descrição|
 | :----------- | :--------- | :--------------- |
 | `homeTeam` | `number` | **Obrigatório**. Id do Time da Casa |
 | `awayTeam` | `number` | **Obrigatório**. Id do TIme de Fora |
 | `homeTeamGoals` | `number` | **Obrigatório**. Quantidade de Goals |
 | `awayTeamGoals` | `number` | **Obrigatório**. Quantidade de Goals|
   
-| Header       | Type       | Description      |
+| Header       | Tipo| Descrição|
 | :----------- | :--------- | :--------------- |
 | `authorization` | `string` | **Obrigatório**. Token |
   
@@ -161,7 +161,7 @@ Suba os containers
   PATCH /matches/:id/finish
 ```
 
-| Parameter       | Type       | Description      |
+| Parameter       | Tipo| Descrição|
 | :----------- | :--------- | :--------------- |
 | `id` | `number` | **Obrigatório**. Id do Jogo|
   
@@ -171,11 +171,11 @@ Suba os containers
   PATCH /matches/:id/
 ```
 
-| Parameter       | Type       | Description      |
+| Parameter       | Tipo| Descrição|
 | :----------- | :--------- | :--------------- |
 | `id` | `number` | **Obrigatório**. Id do Time|
   
-| Body       | Type       | Description      |
+| Body       | Tipo| Description      |
 | :----------- | :--------- | :--------------- |
 | `homeTeamGoals` | `number` | **Obrigatório**. Quantidade de Goals |
 | `awayTeamGoals` | `number` | **Obrigatório**. Quantidade de Goals |
