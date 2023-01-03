@@ -5,7 +5,28 @@ Nesse projeto foi desenvolvido uma API que se conecta com o Front-end onde é po
 
 ## Rode Localmente
 
-### Variaveis de Ambiente
+<details>
+ <summary><strong>  ⚠️Configurações mínimas para execução do projeto⚠️ </strong></summary>
+ Na sua máquina você deve ter:
+
+ - Sistema Operacional Distribuição Unix
+ - Node versão 16
+ - Docker
+ - Docker-compose versão >=1.29.2
+
+➡️ O `node` deve ter versão igual ou superior à `16.14.0 LTS`:
+  - Para instalar o nvm, [acesse esse link](https://github.com/nvm-sh/nvm#installing-and-updating);
+  - Rode os comandos abaixo para instalar a versão correta de `node` e usá-la:
+    - `nvm install 16.14 --lts`
+    - `nvm use 16.14`
+    - `nvm alias default 16.14`
+ 
+ ➡️ O`docker-compose` deve ter versão igual ou superior à`ˆ1.29.2`:
+ 
+ </details>
+
+<details>
+ <summary><strong>  ⚠️Variaveis de Ambiente⚠️ </strong></summary>
 
 Para rodar esse Projeto, você vai precisar adicionar as seguintes variaveis de ambiente no seu arquivo .env:
 
@@ -20,6 +41,8 @@ Para rodar esse Projeto, você vai precisar adicionar as seguintes variaveis de 
 `DB_HOST`
 
 `DB_PORT`
+
+</details>
 
 Clone o Projeto
 
